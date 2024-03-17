@@ -1,0 +1,21 @@
+
+/* override the .has-feedback bootstrap class so that numericInput up/down
+* are not pushed to the left.  */
+.has-feedback .form-control {
+  padding-right: 12px; /* bootstrap forms default if 42.5px */
+}
+
+/* override pickerInput has-feedback class so that right margin does not
+cause misalignment between dropdown menu and selectpicker */
+.has-feedback .bootstrap-select.form-control {
+  padding-right: 0; 
+}
+
+/* fix for selectizeInput right padding when icon = NULL.  See https://github.com/merlinoa/shinyFeedback/issues/53*/
+.has-feedback .form-control.selectized {
+  padding-right: 0;
+}
+/* fix2 for selectizeInput right padding when icon = NULL.  See https://github.com/merlinoa/shinyFeedback/issues/53*/
+.has-feedback .form-control.selectize-control {
+  padding-right: 0;
+}

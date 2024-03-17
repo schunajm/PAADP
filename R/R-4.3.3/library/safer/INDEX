@@ -1,0 +1,10 @@
+decrypt_file            Decrypt a file
+decrypt_object          Decrypt a object
+decrypt_string          Decrypt a string or a raw vector
+encrypt_file            Encrypt a file
+encrypt_object          Encrypt a object
+encrypt_string          Encrypt a string
+keypair                 Generate a public key and private key pair
+retrieve_object         Retrieve an object from a connection(or a file)
+safer-package           safer
+save_object             Save an object to a connection(or a file)

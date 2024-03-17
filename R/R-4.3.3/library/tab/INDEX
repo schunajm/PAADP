@@ -1,0 +1,29 @@
+formatp                 Format P-values for Functions in the 'tab'
+                        Package
+glm_v                   Print a GLM Summary Table to the RStudio Viewer
+tab                     Create Summary Tables for Statistical Reports
+tabcoxph                Create Summary Table for Fitted Cox
+                        Proportional Hazards Model
+tabdata                 Sample Dataset for 'tab' Package
+tabfreq                 Create Frequency Table
+tabfreq.svy             Create Frequency Table (for Complex Survey
+                        Data)
+tabgee                  Create Summary Table for Fitted Generalized
+                        Estimating Equation Model
+tabglm                  Create Summary Table for Fitted Generalized
+                        Linear Model
+tabmeans                Create Table Comparing Group Means
+tabmeans.svy            Create Table Comparing Group Means (for Complex
+                        Survey Data)
+tabmedians              Create Table Comparing Group Medians
+tabmedians.svy          Create Table Comparing Group Medians (for
+                        Complex Survey Data)
+tabmulti                Create Table Comparing Characteristics Across
+                        Levels of a Categorical Variable
+tabmulti.svy            Create Table Comparing Characteristics Across
+                        Levels of a Categorical Variable (for Complex
+                        Survey Data)
+tabreg                  Create Regression Table from Betas and Standard
+                        Errors
+tabsvydata              Sample Survey Dataset for 'tab' Package
+toviewer                Output a Table to the RStudio Viewer

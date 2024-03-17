@@ -1,0 +1,17 @@
+cosinor.lm              Fit cosinor model
+cosinor.lm.default      Fit cosinor model
+cosinor_analyzer        Shiny application to demonstrate cosinor fit
+get_varnames            Extract variable names from terms object,
+                        handling specials
+ggplot_cosinor.lm       Plot a cosinor model
+predict.cosinor.lm      Predict from a cosinor model
+print.cosinor.lm        Print cosinor model
+print.summary.cosinor.lm
+                        Print the summary of a cosinor model
+print.test              Print test of model
+print.test_cosinor      Print results of test of cosinor model
+simulate_cosinor        Simulate data from a cosinor model
+summary.cosinor.lm      Summarize a cosinor model
+test_cosinor            Test for differences in a cosinor model
+update_covnames         Replace covariate names with descriptive text
+vitamind                Vitamin D

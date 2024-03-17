@@ -1,0 +1,21 @@
+accelerometry           Functions for Processing Accelerometer Data
+artifacts               Accelerometer Artifact Correction
+blockaves               Block Averages
+blocksums               Block Sums
+bouts                   Physical Activity Bout Detection
+cut_counts              Cut Count Values into Intensity Ranges
+intensities             Physical Activity Intensities
+inverse_rle2            Inverse Run Length Encoding (Alternate
+                        Implementation)
+movingaves              Moving Averages
+personvars              Calculating Daily Averages for Physical
+                        Activity Variables
+process_tri             Process Triaxial Minute-to-Minute Accelerometer
+                        Data
+process_uni             Process Uniaxial Minute-to-Minute Accelerometer
+                        Data
+rle2                    Run Length Encoding (Alternate Implementation)
+sedbreaks               Sedentary Breaks
+tridata                 Triaxial Sample Data
+unidata                 Uniaxial Sample Data
+weartime                Wear Time Classification

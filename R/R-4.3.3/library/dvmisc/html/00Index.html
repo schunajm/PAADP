@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head><title>R: Convenience Functions, Moving Window Statistics, and Graphics</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+<h1> Convenience Functions, Moving Window Statistics, and Graphics
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;dvmisc&rsquo; version 1.1.4</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="dvmisc.html">dvmisc-package</a></td>
+<td>Convenience Functions, Moving Window Statistics, and Graphics</td></tr>
+<tr><td style="width: 25%;"><a href="bmi3.html">bmi3</a></td>
+<td>Convert Continuous BMI Values into 3-Level Factor</td></tr>
+<tr><td style="width: 25%;"><a href="bmi4.html">bmi4</a></td>
+<td>Convert Continuous BMI Values into 4-Level Factor</td></tr>
+<tr><td style="width: 25%;"><a href="cleancut.html">cleancut</a></td>
+<td>Convert Numeric to Factor with Convenient Interface</td></tr>
+<tr><td style="width: 25%;"><a href="clean_glm.html">clean_glm</a></td>
+<td>Create a Clean Summary Table from a glm Object</td></tr>
+<tr><td style="width: 25%;"><a href="create_qgroups.html">create_qgroups</a></td>
+<td>Create Quantile Groups</td></tr>
+<tr><td style="width: 25%;"><a href="create_qgroups_svy.html">create_qgroups_svy</a></td>
+<td>Create Quantile Groups (Complex Survey Data)</td></tr>
+<tr><td style="width: 25%;"><a href="cut_decreasing.html">cut_decreasing</a></td>
+<td>Cut with Decreasing Factor Levels</td></tr>
+<tr><td style="width: 25%;"><a href="dots_bars.html">dots_bars</a></td>
+<td>Plot Points +/- Error Bars</td></tr>
+<tr><td style="width: 25%;"><a href="dvmisc.html">dvmisc</a></td>
+<td>Convenience Functions, Moving Window Statistics, and Graphics</td></tr>
+<tr><td style="width: 25%;"><a href="expand_grid.html">expand_grid</a></td>
+<td>Similar to expand.grid but with Sequences Reversed and Ability to Treat Variables as Sets</td></tr>
+<tr><td style="width: 25%;"><a href="gammareg.html">gammareg</a></td>
+<td>Constant-Scale Gamma Model for Y vs. Covariates with Y Potentially Subject to Multiplicative Lognormal Errors</td></tr>
+<tr><td style="width: 25%;"><a href="get_mse.html">get_mse</a></td>
+<td>Extract Mean Squared Error (MSE) from Fitted Regression Model</td></tr>
+<tr><td style="width: 25%;"><a href="headtail.html">headtail</a></td>
+<td>Return the First and Last Part of an Object</td></tr>
+<tr><td style="width: 25%;"><a href="histo.html">histo</a></td>
+<td>Histogram with Added Options</td></tr>
+<tr><td style="width: 25%;"><a href="inside.html">inside</a></td>
+<td>Check Whether Numeric Value Falls Inside Two Other Numeric Values</td></tr>
+<tr><td style="width: 25%;"><a href="interval_groups.html">interval_groups</a></td>
+<td>Split Continuous Variable into Equal-Width Groups</td></tr>
+<tr><td style="width: 25%;"><a href="iterate.html">iterate</a></td>
+<td>Iterate Function Over All Combinations of User-Specified Inputs, Potentially Multiple Times</td></tr>
+<tr><td style="width: 25%;"><a href="list_override.html">list_override</a></td>
+<td>Add Elements of Second List to First List, Replacing Elements with Same Name</td></tr>
+<tr><td style="width: 25%;"><a href="logit_prob.html">logit_prob</a></td>
+<td>Convert Logit to Probability</td></tr>
+<tr><td style="width: 25%;"><a href="lognormalreg.html">lognormalreg</a></td>
+<td>Linear Regression of log(Y) vs. Covariates with Y Potentially Subject to Multiplicative Lognormal Errors</td></tr>
+<tr><td style="width: 25%;"><a href="logodds_graph.html">logodds_graph</a></td>
+<td>Graph Log-Odds of Binary Variable Across A Grouping Variable</td></tr>
+<tr><td style="width: 25%;"><a href="max_n.html">max_n</a></td>
+<td>Maximum of Numeric Values</td></tr>
+<tr><td style="width: 25%;"><a href="means_graph.html">means_graph</a></td>
+<td>Graph Means Across a Grouping Variable</td></tr>
+<tr><td style="width: 25%;"><a href="mean_i.html">mean_i</a></td>
+<td>Mean of Integer Values</td></tr>
+<tr><td style="width: 25%;"><a href="min_n.html">min_n</a></td>
+<td>Minimum of Numeric Values</td></tr>
+<tr><td style="width: 25%;"><a href="mle_gamma.html">mle_gamma</a></td>
+<td>Maximum Likelihood Estimation for X[1], ..., X[n] ~ Gamma(alpha, beta)</td></tr>
+<tr><td style="width: 25%;"><a href="mle_gamma_lnorm.html">mle_gamma_lnorm</a></td>
+<td>Maximum Likelihood Estimation for X[1], ..., X[n] ~ Gamma(alpha, beta) Lognormal(mu, sigsq)</td></tr>
+<tr><td style="width: 25%;"><a href="mle_lnorm.html">mle_lnorm</a></td>
+<td>Maximum Likelihood Estimation for X[1], ..., X[n] ~ Lognormal(mu, sigsq)</td></tr>
+<tr><td style="width: 25%;"><a href="mle_lnorm_lnorm.html">mle_lnorm_lnorm</a></td>
+<td>Maximum Likelihood Estimation for X[1], ..., X[n] ~ Lognormal(mu1, sigsq1) Lognormal(mu2, sigsq2)</td></tr>
+<tr><td style="width: 25%;"><a href="moving_mean.html">moving_mean</a></td>
+<td>Moving Averages</td></tr>
+<tr><td style="width: 25%;"><a href="n_2t_equal.html">n_2t_equal</a></td>
+<td>Calculate Per-Group Sample Size for Two-Sample Equal Variance T-Test</td></tr>
+<tr><td style="width: 25%;"><a href="n_2t_unequal.html">n_2t_unequal</a></td>
+<td>Calculate Per-Group Sample Size for Two-Sample Unequal Variance T-Test</td></tr>
+<tr><td style="width: 25%;"><a href="odds_prob.html">odds_prob</a></td>
+<td>Convert Odds to Probability</td></tr>
+<tr><td style="width: 25%;"><a href="plot_ll.html">plot_ll</a></td>
+<td>Plot Log-Likelihood vs. Values of One Parameter</td></tr>
+<tr><td style="width: 25%;"><a href="pooled_var.html">pooled_var</a></td>
+<td>Pooled Sample Variance</td></tr>
+<tr><td style="width: 25%;"><a href="power_2t_equal.html">power_2t_equal</a></td>
+<td>Calculate Power for Two-Sample Equal Variance T-Test</td></tr>
+<tr><td style="width: 25%;"><a href="power_2t_unequal.html">power_2t_unequal</a></td>
+<td>Calculate Power for Two-Sample Unequal Variance T-Test</td></tr>
+<tr><td style="width: 25%;"><a href="prob_logit.html">prob_logit</a></td>
+<td>Convert Probability to Logit</td></tr>
+<tr><td style="width: 25%;"><a href="prob_odds.html">prob_odds</a></td>
+<td>Convert Probability to Odds</td></tr>
+<tr><td style="width: 25%;"><a href="quant_groups.html">quant_groups</a></td>
+<td>Split Continuous Variable into Quantile Groups</td></tr>
+<tr><td style="width: 25%;"><a href="quant_groups_svy.html">quant_groups_svy</a></td>
+<td>Split Continuous Variable into Quantile Groups (Survey Version)</td></tr>
+<tr><td style="width: 25%;"><a href="reverse_cut.html">reverse_cut</a></td>
+<td>Reverse Cut</td></tr>
+<tr><td style="width: 25%;"><a href="sliding_cor.html">sliding_cor</a></td>
+<td>Moving Correlations as Short Vector Slides Across Long Vector</td></tr>
+<tr><td style="width: 25%;"><a href="sliding_cov.html">sliding_cov</a></td>
+<td>Moving Covariance as Short Vector Slides Across Long Vector</td></tr>
+<tr><td style="width: 25%;"><a href="sumsim.html">sumsim</a></td>
+<td>Summarize Simulation Results</td></tr>
+<tr><td style="width: 25%;"><a href="sum_i.html">sum_i</a></td>
+<td>Sum of Integer Values</td></tr>
+<tr><td style="width: 25%;"><a href="trim.html">trim</a></td>
+<td>Trim Tail Values off of a Vector</td></tr>
+<tr><td style="width: 25%;"><a href="truerange.html">truerange</a></td>
+<td>Range of a Vector (Not Min/Max!)</td></tr>
+<tr><td style="width: 25%;"><a href="which.max2.html">which.max2</a></td>
+<td>Return Index of (First) Maximum of a Vector</td></tr>
+<tr><td style="width: 25%;"><a href="which.min2.html">which.min2</a></td>
+<td>Return Index of (First) Minimum of a Vector</td></tr>
+<tr><td style="width: 25%;"><a href="which_max_im.html">which_max_im</a></td>
+<td>Return (Row, Column) Index of (First) Maximum of an Integer Matrix</td></tr>
+<tr><td style="width: 25%;"><a href="which_max_iv.html">which_max_iv</a></td>
+<td>Return Index of (First) Maximum of an Integer Vector</td></tr>
+<tr><td style="width: 25%;"><a href="which_max_nm.html">which_max_nm</a></td>
+<td>Return (Row, Column) Index of (First) Maximum of a Numeric Matrix</td></tr>
+<tr><td style="width: 25%;"><a href="which_max_nv.html">which_max_nv</a></td>
+<td>Return Index of (First) Maximum of a Numeric Vector</td></tr>
+<tr><td style="width: 25%;"><a href="which_min_im.html">which_min_im</a></td>
+<td>Return (Row, Column) Index of (First) Minimum of an Integer Matrix</td></tr>
+<tr><td style="width: 25%;"><a href="which_min_iv.html">which_min_iv</a></td>
+<td>Return Index of (First) Minimum of an Integer Vector</td></tr>
+<tr><td style="width: 25%;"><a href="which_min_nm.html">which_min_nm</a></td>
+<td>Return (Row, Column) Index of (First) Minimum of a Numeric Matrix</td></tr>
+<tr><td style="width: 25%;"><a href="which_min_nv.html">which_min_nv</a></td>
+<td>Return Index of (First) Minimum of a Numeric Vector</td></tr>
+</table>
+</div></body></html>

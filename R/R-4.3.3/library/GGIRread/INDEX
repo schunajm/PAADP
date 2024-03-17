@@ -1,0 +1,15 @@
+GENEActivReader         Function (C++) to read binary files as produced
+                        by the GENEActiv accelerometer
+GGIRread-package        A package to read data files from wearable
+                        accelerometers
+readAxivity             Function to read .cwa-format files as produced
+                        by the accelerometer named 'Axivity'
+readGENEActiv           Function (R) to read binary files as produced
+                        by the GENEActiv accelerometer
+readGenea               Function to read binary files as produced by
+                        the accelerometer named 'Genea', not to be
+                        confused with the 'GENEActiv' (see package
+                        GENEAread for this)
+readWav                 Deprecated function to read .wav files as can
+                        be stored with OMGUI software by Axivity Ltd
+resample                Resample timeseries

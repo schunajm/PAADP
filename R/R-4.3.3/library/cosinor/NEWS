@@ -1,0 +1,23 @@
+# cosinor 1.2.3
+
+* renamed ggplot.cosinor.lm to ggplot_cosinor.lm
+
+# cosinor 1.2.2
+
+* Update shiny app url
+
+# cosinor 1.2.1
+
+* Fix for roxygen update
+* Fix for tibbles instead of dataframes
+
+# cosinor 1.1
+
+* Added shiny app function
+* Fixed bug where plot with no covariates failed.
+* Fixed bug to allow as.factor inside specials of formula.
+* Added references.
+
+# cosinor 1.0
+
+* First release

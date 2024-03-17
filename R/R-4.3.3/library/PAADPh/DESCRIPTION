@@ -1,0 +1,18 @@
+Package: PAADPh
+Type: Package
+Title: Physical Activity Accelerometer Data Processing Helper
+Version: 1.0.0
+Author: John M. Schuna Jr.
+Maintainer: John M. Schuna Jr. <John.Schuna@oregonstate.edu>
+Description: This package contains helper functions needed within the
+    PAADP software program. 
+License: LGPL (>= 2.0, < 3) | file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: data.table, Rcpp (>= 0.12.10), foreach, doParallel, signal,
+        gsignal, zoo, bitops, matlab, GENEAread, tuneR, unisensR, ineq,
+        read.gt3x, R.utils, GGIR
+Depends: stats, utils, R (>= 3.5.0)
+LinkingTo: Rcpp
+Built: R 4.3.3; x86_64-w64-mingw32; 2024-03-15 06:47:45 UTC; windows
+Archs: x64

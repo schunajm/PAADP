@@ -1,0 +1,23 @@
+as.data.frame.activity
+                        Convert an activity matrix to a data.frame
+get_n_samples           Calculate the expected activity sample size
+                        from start time and last sample time in the
+                        info.txt of a gt3x directory
+gt3x_datapath           Path to read.gt3x package sample data
+gt3x_dataurl            Get url of github release
+gt3x_download           Download and unzip a zipped 'gt3x' file
+gt3x_url                Get url of gt3x sample file
+is_gt3x                 Check if files are .gt3x files
+list_gt3x               List full paths to all gt3x files in a
+                        directory
+parseActivityBin        Parse activity samples from a NHANES-GT3X file
+parseGT3X               Parse activity samples from a GT3X file
+parseLuxBin             Parse activity samples from a GT3X file
+parse_gt3x_info         Parse GT3X info.txt file
+print.activity_df       Print the contents of the activity data
+print.gt3x_info         Print the contents of the info.txt file in a
+                        gt3x folder
+read.gt3x               Read GT3X
+ticks2datetime          Convert NET ticks to 'POSIXct' datetime
+unzip.gt3x              Unzip gt3x files
+unzip_single_gt3x       Unzip a single gt3x file

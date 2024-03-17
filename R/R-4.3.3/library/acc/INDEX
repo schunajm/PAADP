@@ -1,0 +1,25 @@
+NHANES                  NHANES data
+acc                     Summarizes accelerometer data for multiple
+                        types of physical activities
+accBatch                Summarizes multiple accelerometer datafiles
+accSummary              Summarizes accelerometer data for a single type
+                        of physical activity
+aee                     Creates an aee object
+aeefit                  Fits semiparametric regression models for
+                        irregularly observed physical activity data
+aeexfit                 Fits semiparametric regression models robust to
+                        informative observation times and censoring
+aggAcc                  Aggregates multiple accelerometer summary files
+plotAcc                 Plots accelerometer data
+racePlot                Race plots of minutes of activity per day
+readCounts              Reads counts data in .dat, .agd, or .csv format
+                        for Actigraph GT1M and GT3X devices
+readCountsBatch         Reads multiple accelerometer counts data in a
+                        folder
+readRaw                 Reads raw data in .csv format for GT3X devices
+simAcc                  Simulates accelerometer data based on a hidden
+                        Markov model
+simPA                   Simulates minutes of physical activity per day
+summary.aeefit          Summary method for aeefit objects
+summary.aeexfit         Summary method for aeexfit objects
+visGroup                Group level plots

@@ -1,0 +1,94 @@
+bmi3                    Convert Continuous BMI Values into 3-Level
+                        Factor
+bmi4                    Convert Continuous BMI Values into 4-Level
+                        Factor
+clean_glm               Create a Clean Summary Table from a glm Object
+cleancut                Convert Numeric to Factor with Convenient
+                        Interface
+create_qgroups          Create Quantile Groups
+create_qgroups_svy      Create Quantile Groups (Complex Survey Data)
+cut_decreasing          Cut with Decreasing Factor Levels
+dots_bars               Plot Points +/- Error Bars
+dvmisc                  Convenience Functions, Moving Window
+                        Statistics, and Graphics
+expand_grid             Similar to expand.grid but with Sequences
+                        Reversed and Ability to Treat Variables as Sets
+gammareg                Constant-Scale Gamma Model for Y vs. Covariates
+                        with Y Potentially Subject to Multiplicative
+                        Lognormal Errors
+get_mse                 Extract Mean Squared Error (MSE) from Fitted
+                        Regression Model
+headtail                Return the First and Last Part of an Object
+histo                   Histogram with Added Options
+inside                  Check Whether Numeric Value Falls Inside Two
+                        Other Numeric Values
+interval_groups         Split Continuous Variable into Equal-Width
+                        Groups
+iterate                 Iterate Function Over All Combinations of
+                        User-Specified Inputs, Potentially Multiple
+                        Times
+list_override           Add Elements of Second List to First List,
+                        Replacing Elements with Same Name
+logit_prob              Convert Logit to Probability
+lognormalreg            Linear Regression of log(Y) vs. Covariates with
+                        Y Potentially Subject to Multiplicative
+                        Lognormal Errors
+logodds_graph           Graph Log-Odds of Binary Variable Across A
+                        Grouping Variable
+max_n                   Maximum of Numeric Values
+mean_i                  Mean of Integer Values
+means_graph             Graph Means Across a Grouping Variable
+min_n                   Minimum of Numeric Values
+mle_gamma               Maximum Likelihood Estimation for X[1], ...,
+                        X[n] ~ Gamma(alpha, beta)
+mle_gamma_lnorm         Maximum Likelihood Estimation for X[1], ...,
+                        X[n] ~ Gamma(alpha, beta) Lognormal(mu, sigsq)
+mle_lnorm               Maximum Likelihood Estimation for X[1], ...,
+                        X[n] ~ Lognormal(mu, sigsq)
+mle_lnorm_lnorm         Maximum Likelihood Estimation for X[1], ...,
+                        X[n] ~ Lognormal(mu1, sigsq1) Lognormal(mu2,
+                        sigsq2)
+moving_mean             Moving Averages
+n_2t_equal              Calculate Per-Group Sample Size for Two-Sample
+                        Equal Variance T-Test
+n_2t_unequal            Calculate Per-Group Sample Size for Two-Sample
+                        Unequal Variance T-Test
+odds_prob               Convert Odds to Probability
+plot_ll                 Plot Log-Likelihood vs. Values of One Parameter
+pooled_var              Pooled Sample Variance
+power_2t_equal          Calculate Power for Two-Sample Equal Variance
+                        T-Test
+power_2t_unequal        Calculate Power for Two-Sample Unequal Variance
+                        T-Test
+prob_logit              Convert Probability to Logit
+prob_odds               Convert Probability to Odds
+quant_groups            Split Continuous Variable into Quantile Groups
+quant_groups_svy        Split Continuous Variable into Quantile Groups
+                        (Survey Version)
+reverse_cut             Reverse Cut
+sliding_cor             Moving Correlations as Short Vector Slides
+                        Across Long Vector
+sliding_cov             Moving Covariance as Short Vector Slides Across
+                        Long Vector
+sum_i                   Sum of Integer Values
+sumsim                  Summarize Simulation Results
+trim                    Trim Tail Values off of a Vector
+truerange               Range of a Vector (Not Min/Max!)
+which.max2              Return Index of (First) Maximum of a Vector
+which.min2              Return Index of (First) Minimum of a Vector
+which_max_im            Return (Row, Column) Index of (First) Maximum
+                        of an Integer Matrix
+which_max_iv            Return Index of (First) Maximum of an Integer
+                        Vector
+which_max_nm            Return (Row, Column) Index of (First) Maximum
+                        of a Numeric Matrix
+which_max_nv            Return Index of (First) Maximum of a Numeric
+                        Vector
+which_min_im            Return (Row, Column) Index of (First) Minimum
+                        of an Integer Matrix
+which_min_iv            Return Index of (First) Minimum of an Integer
+                        Vector
+which_min_nm            Return (Row, Column) Index of (First) Minimum
+                        of a Numeric Matrix
+which_min_nv            Return Index of (First) Minimum of a Numeric
+                        Vector

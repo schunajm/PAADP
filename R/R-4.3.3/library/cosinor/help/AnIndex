@@ -1,0 +1,15 @@
+cosinor.lm	cosinor.lm
+cosinor.lm.default	cosinor.lm.default
+cosinor_analyzer	cosinor_analyzer
+get_varnames	get_varnames
+ggplot_cosinor.lm	ggplot_cosinor.lm
+predict.cosinor.lm	predict.cosinor.lm
+print.cosinor.lm	print.cosinor.lm
+print.summary.cosinor.lm	print.summary.cosinor.lm
+print.test	print.test
+print.test_cosinor	print.test_cosinor
+simulate_cosinor	simulate_cosinor
+summary.cosinor.lm	summary.cosinor.lm
+test_cosinor	test_cosinor
+update_covnames	update_covnames
+vitamind	vitamind

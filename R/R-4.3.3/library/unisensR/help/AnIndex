@@ -1,0 +1,5 @@
+getUnisensSignalSampleCount	getUnisensSignalSampleCount
+readUnisensEventEntry	readUnisensEventEntry
+readUnisensSignalEntry	readUnisensSignalEntry
+readUnisensStartTime	readUnisensStartTime
+readUnisensValuesEntry	readUnisensValuesEntry

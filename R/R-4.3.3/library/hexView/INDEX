@@ -1,0 +1,18 @@
+as.character.rawBlock   Convert Block of Binary Data into Strings
+as.character.rawFormat
+                        Convert Binary File Format into Strings
+atomicBlock             Create an atomicBlock Object
+blockValue              Extract the Value of a Binary Block
+hexViewFile             Specify an Example File
+markedBlock             Create a markedBlock Object
+memBlock                Create a memBlock Object
+memFormat               Create a memFormat Object
+mixedBlock              Create a mixedBlock Object
+print.rawBlock          Print Method for Block of Binary Data
+print.rawFormat         Print Method for Binary File Format
+readEViews              Read an Eviews File
+readFormat              Read a Binary File
+readRaw                 Read the Raw Binary Content of a File
+vectorBlock             Create a vectorBlock Object
+viewFormat              View a Binary File
+viewRaw                 View the Raw Binary Content of a File

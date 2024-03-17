@@ -1,0 +1,37 @@
+addCap                  addCap
+aePlot                  Adverse Event Plot
+asForm                  asForm
+conVars                 conVars
+dNeedle                 Draw Needles
+dataChk                 dataChk
+dataOverview            dataOverview
+disVars                 disVars
+getqreportOption        Get qreport Options
+hookaddcap              hookaddcap
+hooktime                hooktime
+htmlList                htmlList
+htmlView                htmlView
+htmlViewx               htmlViewx
+kabl                    kabl
+makecallout             makecallout
+makecnote               makecnote
+makecodechunk           makecodechunk
+makecolmarg             makecolmarg
+makegraphviz            makegraphviz
+makemermaid             makemermaid
+maketabs                maketabs
+missChk                 missChk
+multDataOverview        multDataOverview
+pdumpit                 Print to File for Debugging
+printCap                printCap
+putQcap                 putQcap
+runDeriveExpr           runDeriveExpr
+rwrap                   rwrap
+sampleFrac              Compute Sample Fractions
+saveCap                 saveCap
+scplot                  scplot
+setqreportOption        Set qreport Options
+spar                    spar
+timeMar                 timeMar
+vClus                   cClus
+varType                 varType

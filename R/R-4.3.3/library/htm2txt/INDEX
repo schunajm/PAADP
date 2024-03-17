@@ -1,0 +1,6 @@
+browse                  Display simple plain texts in a web page at a
+                        certain URL
+gettxt                  Extract simple plain texts from a web page at a
+                        certain URL
+htm2txt                 Convert a html document to plain texts by
+                        stripping off all html tags

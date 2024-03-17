@@ -1,0 +1,221 @@
+    **************************************************
+    *                                                *
+    *           1.0 SERIES NEWS                      *
+    *                                                *
+    **************************************************
+
+
+
+                CHANGES IN VGAMdata VERSION 1.1-10
+
+NEW FEATURES
+
+    o   New data sets: crim.nz.
+    o   Tested okay on R 4.3.2.
+
+
+
+                CHANGES IN VGAMdata VERSION 1.1-9
+
+NEW FEATURES
+
+    o   Function moved from VGAM 1.1-8: bigamma.mckay.
+    o   New data sets: mbflood.
+    o   Tested okay on R 4.3.0.
+
+
+
+                CHANGES IN VGAMdata VERSION 1.1-8
+
+NEW FEATURES
+
+    o   Tested okay on R 4.2.2.
+    o   New data sets: rar.df, smqP.
+
+
+
+                CHANGES IN VGAMdata VERSION 1.1-6
+
+NEW FEATURES
+
+    o   Data frame xs.nz has more smoking data (variables).
+    o   Tested okay on R 4.1.2.
+
+
+
+                CHANGES IN VGAMdata VERSION 1.1-5
+
+NEW FEATURES
+
+    o   Functions moved from VGAMdata 1.1-5: yip88, bellff, tikuv(dpqr).
+    o   New data sets: airbnb.ac, flamingo.
+
+
+BUG FIXES and CHANGES
+
+    o   genpoisson() and dgenpois() moved into this package.
+        These were the 'original' from VGAM for a long time,
+        and might be able to handle underdispersion in some cases.
+    o   Tested okay on R 4.0.3.
+
+
+
+                CHANGES IN VGAMdata VERSION 1.0-4
+
+NEW FEATURES
+
+    o   New data sets: covid19.nz.
+    o   Functions moved from VGAM 1.1-4: oalog, oilog, otlog,
+        oapospois, oipospois, otpospois, oazeta, oizeta, otzeta,
+        oizipf, oiposbinomial(dpqr), [dpqr]posbinom, [dpqr]pospois,
+        [dpqr]posnegbin.
+
+
+BUG FIXES and CHANGES
+
+    o   Tested okay on R 4.0.1.
+
+
+
+                CHANGES IN VGAMdata VERSION 1.0-3
+
+NEW FEATURES
+
+    o   New data sets: SardiniaHotels.
+
+
+BUG FIXES and CHANGES
+
+    o   ecb14.it$house.owned was faulty in the previous version.
+
+
+
+                CHANGES IN VGAMdata VERSION 1.0-2
+
+NEW FEATURES
+
+    o   New data sets: pirates1, pirates2, ecb06.it, ecb14.it.
+
+
+BUG FIXES and CHANGES
+
+    o   Tested okay on R 3.3.0.
+
+
+
+                CHANGES IN VGAMdata VERSION 1.0-0
+
+NEW FEATURES
+
+    o   Official version that goes with the just-released book
+        "Vector Generalized Linear and Additive Models:
+        With an Implementation in R" by T. W. Yee (2015),
+        Springer: New York, USA.
+    o   New data sets: bd.us.
+    o   Tested okay on R 3.2.2.
+
+
+BUG FIXES and CHANGES
+
+    o None yet!
+
+
+
+    **************************************************
+    *                                                *
+    *           0.9 SERIES NEWS                      *
+    *                                                *
+    **************************************************
+
+
+
+                CHANGES IN VGAMdata VERSION 0.9-7
+
+NEW FEATURES
+
+    o   New data sets: tube10.
+    o   Tested okay on R 3.1.3.
+
+
+BUG FIXES and CHANGES
+
+    o Title fixed in the DESCRIPTION file.
+
+
+
+                CHANGES IN VGAMdata VERSION 0.9-5
+
+NEW FEATURES
+
+    o   New data sets: vtinpat.
+
+
+BUG FIXES and CHANGES
+
+    o Many extra error checks and variable name changes
+      have been made to xs.nz. Many inconsistencies have
+      been replaced by NAs.
+      Some variable have been renamed (slightly).
+
+
+
+
+                CHANGES IN VGAMdata VERSION 0.9-4
+
+NEW FEATURES
+
+    o   New data sets: belcap, crashf.au, profs.nz, trapO.
+    o   wffc.P4() and wffc.P4star() are new.
+
+
+BUG FIXES and CHANGES
+
+    o   wffc.P2() and wffc.P2star() were buggy,
+        wffc.P3() and wffc.P3star() are now more simple.
+
+
+
+
+                CHANGES IN VGAMdata VERSION 0.9-3
+
+NEW FEATURES
+
+    o   New data sets: exam1, rugby.
+
+
+BUG FIXES and CHANGES
+
+    o   None yet!
+
+
+
+
+                CHANGES IN VGAMdata VERSION 0.9-2
+
+NEW FEATURES
+
+    o   New data sets: prison.us, wffc, wffc.nc, etc.
+
+
+BUG FIXES and CHANGES
+
+    o   None yet!
+
+
+
+                CHANGES IN VGAMdata VERSION 0.9-1
+
+NEW FEATURES
+
+    o   Several large data sets from the VGAM package
+        have been put here (making the VGAM package a lot smaller).
+        Probably the version number of VGAMdata will run parallel
+        to the VGAM package.
+    o   New data set: students.tw, bb.de.
+
+
+BUG FIXES and CHANGES
+
+    o   None yet!
+
+

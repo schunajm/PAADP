@@ -1,0 +1,58 @@
+average_results         Average results over valid days
+compute_accumulation_metrics
+                        Compute activity accumulation metrics
+compute_bmr             Compute Basal Metabolic Rate (BMR)
+compute_intensity_distri_metrics
+                        Compute intensity distribution metrics
+compute_mets            Compute metabolic equivalent of task (MET)
+                        values
+compute_pro_actigraph_score
+                        Compute PROactive monitor-based physical
+                        activity score for C-PPAC tool
+compute_pro_score_cppac
+                        Provide score for each question of the C-PPAC
+compute_pro_score_dppac
+                        Provide score for each question of the D-PPAC
+create_fig_mvpa         Create a figure showing the mean daily MVPA
+                        time
+create_fig_mx_by_day    Create a radar plot for MX metrics relating to
+                        each day of the measurement of physical
+                        behavior
+create_fig_mx_summary   Create a radar plot for the mean or median MX
+                        metrics relating to the measurement of physical
+                        behavior
+create_fig_pal          Create a figure showing the mean daily Physical
+                        Activity Level (PAL)
+create_fig_ratio_mvpa_sed
+                        Create a figure showing the mean daily MVPA/SED
+                        ratio
+create_fig_res_by_day   Create a figure with metrics shown for each day
+create_fig_sed          Create a figure showing the mean daily
+                        sedentary (SED) time
+create_fig_steps        Create a figure showing the mean daily step
+                        count
+create_flextable_summary
+                        Create a formatted table of results
+do_all_analyses         Do all analyses at once
+get_guidelines_status   Get WHO physical activity guidelines status
+get_ig_results          Get intensity gradient values and graphics
+get_pa_period_info      Get relevant missing physical activity
+                        information indicated by the user of the app
+get_pal_status          Get FAO physical activity level (PAL) status
+                        (http://www.fao.org/3/y5686e/y5686e07.htm#bm07.3)
+get_ratio_mvpa_sed_comment
+                        Get comment about the MVPA/SED ratio
+mark_intensity          Add intensity metrics
+mark_wear_time          Mark dataset for nonwear/wear time
+plot_data               Plot accelerometer data for each day
+plot_data_with_intensity
+                        Plot accelerometer data for each day with both
+                        nonwear time and physical activity intensity
+                        categories
+prepare_dataset         Prepare accelerometer data
+rasch_transform         Compute Rasch transformation for PROactive
+                        scores
+read_agd                Read activity counts from an *.agd file
+read_agd_raw            Read an *.agd file, with no post-processing
+recap_by_day            Summarize results by day
+run_app                 Run the Shiny Application

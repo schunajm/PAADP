@@ -1,0 +1,15 @@
+PANAS_november          Self-reported mood
+PANAS_time              Measurement times of self-reported mood
+PA_extraverts           Self-reported positive affect of extraverts
+PA_introverts           Self-reported positive affect of introverts
+PA_time                 Measurement times of self-reported positive
+                        affect
+correct.acrophase       Acrophase Correction
+cosinor.PR              Percent Rhythm
+cosinor.detect          Rhythm Detection Test
+cosinor.poptests        Comparison of Cosinor Parameters of Two
+                        Populations
+periodogram             Periodogram
+population.cosinor.lm   Population-Mean Cosinor
+ssections               Serial Sections
+temperature_zg          Daily air temperature in Zagreb

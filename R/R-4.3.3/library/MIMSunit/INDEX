@@ -1,0 +1,81 @@
+aggregate_for_mims      Aggregate over epoch to get numerically
+                        integrated values.
+aggregate_for_orientation
+                        Aggregate over epoch to get estimated
+                        accelerometer orientation.
+bandlimited_interp      Apply a bandlimited interpolation filter to the
+                        signal to change the sampling rate
+clip_data               Clip dataframe to the given start and stop time
+compute_orientation     Estimate the accelerometer orientation
+conceptual_diagram_data
+                        The input accelerometer data used to generate
+                        the conceptual diagram (Figure 1) in the
+                        manuscript.
+custom_mims_unit        Compute both MIMS-unit and sensor orientations
+                        with custom settings
+cut_off_signal          Cut off input multi-channel signal according to
+                        a new dynamic range
+cv_different_algorithms
+                        Coefficient of variation values for different
+                        acceleration data summary algorithms
+edge_case               A short snippet of raw accelerometer signal
+                        from a device that has ending data maxed out.
+export_to_actilife      Export accelerometer data in Actilife RAW CSV
+                        format
+extrapolate             Extrapolate input multi-channel accelerometer
+                        data
+extrapolate_rate        Get extrapolation rate.
+generate_interactive_plot
+                        Plot MIMS unit values or raw signal using
+                        dygraphs interactive plotting library.
+iir                     Apply IIR filter to the signal
+illustrate_extrapolation
+                        Plot illustrations about extrapolation in
+                        illustration style.
+illustrate_signal       Plot given raw signal in illustration diagram
+                        style.
+import_actigraph_count_csv
+                        Import Actigraph count data stored in Actigraph
+                        summary csv format
+import_actigraph_csv    Import raw multi-channel accelerometer data
+                        stored in Actigraph raw csv format
+import_actigraph_csv_chunked
+                        Import large raw multi-channel accelerometer
+                        data stored in Actigraph raw csv format in
+                        chunks
+import_actigraph_meta   Import The meta information stored in Actigraph
+                        RAW or summary csv file.
+import_activpal3_csv    Import raw multi-channel accelerometer data
+                        stored in ActivPal3 csv format
+import_enmo_csv         Import ENMO data stored in csv csv
+import_mhealth_csv      Import raw multi-channel accelerometer data
+                        stored in mHealth Specification
+import_mhealth_csv_chunked
+                        Import large raw multi-channel accelerometer
+                        data stored in mHealth Specification in chunks.
+interpolate_signal      Interpolate missing points and unify sampling
+                        rate for multi-channel signal
+measurements_different_devices
+                        The mean and standard deviation of
+                        accelerometer summary measure for different
+                        acceleration data summary algorithms and for
+                        different devices.
+mims_unit               Compute Monitor Independent Motion Summary unit
+                        (MIMS-unit)
+parse_epoch_string      Parse epoch string to the corresponding number
+                        of samples it represents.
+rest_on_table           A short snippet of raw accelerometer signal
+                        from a device resting on a table.
+sample_raw_accel_data   Sample raw accelerometer data
+sampling_rate           Estimate sampling rate for multi-channel signal
+segment_data            Segment input dataframe into windows as
+                        specified by breaks. 'segment_data' segments
+                        the input sensor dataframe into epoch windows
+                        with length specified in breaks.
+sensor_orientations     Estimates sensor orientation
+shiny_app               Run shiny app to compute MIMSunit values from
+                        files
+simulate_new_data       Simulate new data based on the given
+                        multi-channel accelerometer data
+sum_up                  Sum of multi-channel signal.
+vector_magnitude        Vector magnitude of multi-channel signal.

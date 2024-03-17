@@ -1,0 +1,11 @@
+safer-package	safer-package
+decrypt_file	decrypt_file
+decrypt_object	decrypt_object
+decrypt_string	decrypt_string
+encrypt_file	encrypt_file
+encrypt_object	encrypt_object
+encrypt_string	encrypt_string
+keypair	keypair
+retrieve_object	retrieve_object
+safer	safer-package
+save_object	save_object

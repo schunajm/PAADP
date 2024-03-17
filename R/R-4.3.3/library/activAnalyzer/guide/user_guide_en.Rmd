@@ -1,0 +1,194 @@
+---
+title: |
+    | activAnalyzer
+    | user's guide
+date: "`r Sys.Date()`"
+description: "activAnalyzer"
+documentclass: book
+
+output:
+  bookdown::pdf_document2:
+    includes:
+      in_header: preamble.tex
+    latex_engine: xelatex
+
+bibliography: references.bib 
+biblio-title: References, heading=bibintoc
+geometry: "left=4cm, right=3cm, top=2.5cm, bottom=2.5cm"
+csl: apa.csl
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(tidyverse)
+```
+
+# Information
+## Assessor
+It is possible to provide the name and surname of the assessor. Assessor information must be provided to have a complete document after generating the report at the end of the app.
+
+## Patient
+It is possible to provide the name and surname related to the patient, as well as their sex, age, and weight. The user must provide sex, age, and weight information for getting results because these parameters are used to compute basal metabolic rate (BMR) as well as physical activity level (PAL). Patient information must be provided to have a complete document after generating the report at the end of the app.
+
+## Device
+It is possible to indicate where the device was placed on the body during the measurement period (hip or back only). Device information must be provided to have a complete document after generating the report at the end of the app. Other relevant information regarding the device (i.e., ActiGraph model, sampling rate, filter enabled when the .agd file was generated from .gt3x data with ActiLife® software) are silently captured when uploading the data file.  
+
+# Data uploading, nonwear time detection, and data visualization
+The user must upload an .agd file previously generated using ActiLife<span>&#174;</span> software with at least the data related to the three axes and the step counts. Then, the user can choose the epoch to be used for analysis. The default is set to 60 s as it is the most commonly used epoch in adults; shorter epochs will slow the subsequent analyses. After this step, it is possible to configure the analysis to be performed to detect nonwear time. It consists of choosing the activity data (vector magnitude counts or vertical axis counts) and the time interval with zero count to be considered to detect nonwear time, as well as the time interval with nonzero counts allowed during a nonwear period along with the period duration with zero count required back and forward the detected activity to validate nonwear time. The default values provided in the app for configuring nonwear time detection are based on the paper by Choi et al. [-@choiAssessmentWearNonwear2012]. Finally, when all inputs are configured as required, the user must click on the "Validate configuration" button. The app will automatically compute the vector magnitude ($VM = \sqrt{x^2 + y^2 + z^2}$) before analyzing nonwear time. If all inputs are valid, the app detects nonwear time thanks to a function from the `PhysicalActivity` R package [@choiPhysicalActivityProcessAccelerometer2021]. The app then provides a graphic allowing the user to visualize different data among those contained in the data file. Completing this step is required before going further in the app.
+
+# Configuration for metrics computation
+It is possible to select the days with which analyzis has to be performed. Then, the user must select an equation to compute METs and the axis and cut-points to be used to compute time spent in sedentary behavior (SED), light physical activity (LPA), moderate physical activity (MPA), vigorous physical activity (VPA), and moderate-to-vigorous physical activity (MVPA). 
+
+The equations provided in the app for computing METs can be retrieved from scientific articles:
+
+* `Sasaki et al. (2011) [Adults]` equation [@sasakiValidationComparisonActiGraph2011].
+* `Santos-Lozano et al. (2013) [Adults]` equation [@santos-lozanoActigraphGT3XValidation2013].
+* `Freedson et al. (1998) [Adults]` equation [@freedsonCalibrationComputerScience1998].
+* `Santos-Lozano et al. (2013) [Older adults]` equation [@santos-lozanoActigraphGT3XValidation2013].
+
+The provided cut-points can also be retrieved from scientific articles:
+
+* Aguilar-Farias et al. [-@aguilar-fariasActiGraphGT3XCutpoints2014] SED cut-points for older adults : <200 counts/min [Vector magnitude];
+* Sasaki et al. [-@sasakiValidationComparisonActiGraph2011] MPA and VPA cut-points for adults: $\geqslant$ 2 690 counts/min (MPA) and $\geqslant$ 6 167 counts/min (VPA) [Vector magnitude];
+* Santos-Lozano et al. [-@santos-lozanoActigraphGT3XValidation2013] MPA and VPA cut-points for adults: $\geqslant$ 3 208 counts/min (MPA) and $\geqslant$ 8 565 counts/min (VPA) [Vector magnitude];
+* Freedson et al. [-@freedsonCalibrationComputerScience1998] MPA and VPA cut-points for adults: $\geqslant$ 1 952 counts/min (MPA) and $\geqslant$ 5 725 counts/min (VPA) [Vertical axis];
+* Santos-Lozano et al. [-@santos-lozanoActigraphGT3XValidation2013] MPA and VPA cut-points for older adults: $\geqslant$ 2 751 counts/min (MPA) and $\geqslant$ 9 359 counts/min (VPA) [Vector magnitude]. 
+
+These cut-points (except Freedson et al. cut-points) have been recommended by Migueles et al. [-@miguelesAccelerometerDataCollection2017]. However, in the case where none of them would be satisfactory for the user, the app allows to define personalized cut-points. If epochs shorter than 60 s are used, the value of the cut-point to be set in counts/min will be divided to correspond to the actual epoch.
+
+Thereafter, the user can define the values determining the bins of intensity that will be used to describe the intensity distribution profile as explained in Rowlands et al.  [-@rowlandsCutPointsAccelerometer2018]. The values have to be in correspondence with the epochs used for analysis. For example, if the user is analysing data using 60-s epochs, the values provided should be understood as counts/min. If the user is analysing data using 10-s epochs, the values provided should be understood as counts/10s.
+
+The user also has the possibility to provide information about potential relevant physical activity periods that would have modified physical activity level but that could not be recorded due to accelerometer removal, as for example during some team sport or swimming activities. The user has to select the date at which the physical activity event occured. Then, two boxes have to be filled to indicate the start time of the period: one box for the number dedicated to the hour, and one box dedicated to number of the minute. Same thing for the end time of the period. Finally, the user has to indicate a MET value that would reflect the mean intensity of physical activity during the period. To do this, the user should use the [Compendium of physical activities](https://sites.google.com/site/compendiumofphysicalactivities/) (https://sites.google.com/site/compendiumofphysicalactivities/) that proposes a MET value for a wide range of activities. This information provided by the user will be used to replace data from the initial accelerometer dataset. Each line with a date that is selected will be used. If a period overlaps with a previous period, the data of the last period will be used. Importantly, using this information will modify the true wear time related to the accelerometer: the time related to self-reported physical activity will be considered as "wear" for epochs that would have been initially detected as "nonwear" when using the dedicated algorithms.
+
+Finally, this section allows the user to determine the minimum wear time required to get a valid day and the period of the day over which wear time (and also the other metrics) should be computed. The default value is set to 10 hours (i.e., 600 minutes) over the whole day, as previously recommended [@miguelesAccelerometerDataCollection2017], but 8 hours should be used in COPD patients [@demeyerStandardizingAnalysisPhysical2014]. To automatically get a recommended configuration established in COPD patients in the case where the device would have also been worn during the night [@demeyerStandardizingAnalysisPhysical2014], the user can click on the "PROactive config. for 24-h wearing protocol" button. Of note, the validation of the whole measurement is left to the appreciation of the user. In the literature, it is commonly accepted to require at least 4 valid days to consider the measurement as a reliable picture of what has been actually performed during a week of measurement. However, several studies that implemented the  framework from the *PROactive* consortium for COPD patients used 3 days [@bowlerRealworldUseRescue2019; @garcia-aymerichValidityResponsivenessDaily2021; @gimeno-santosPROactiveInstrumentsMeasure2015; @korenyPatternsPhysicalActivity2021]. Whatever the number of valid days obtained, keep in mind that one week of measurement may not reflect the average behavior over a longer period of time (e.g., a year).
+
+Once all inputs have been correctly fulfilled, the user must click on the "Run analysis" button. This action triggers several calculations. Firstly, the app computes basal metabolic rate (BMR), based on the sex, age, and weight inputs, and on one of the equations retrieved from the paper by Henry et al. [-@henryBasalMetabolicRate2005]. These equations are shown in Table \@ref(tab:METsEquations).
+
+```{r METsEquations}
+library(flextable)
+library(officer)
+set_flextable_defaults(fonts_ignore = TRUE)
+flextable(
+tribble(
+  ~ "Age category (yr)", ~Sex, ~Equation,
+"<3",      "male",   "61.0 * weight - 33.7",
+"[3-10[",  "male",   "23.3 * weight + 514",
+"[10-18[", "male",   "18.4 * weight + 581",
+"[18-30[", "male",   "16.0 * weight + 545",
+"[30-60[", "male",   "14.2  * weight + 593",
+"[60-70[", "male",   "13.0 * weight + 567",
+">=70"   , "male",      "3.7 * weight + 481",
+
+"<3",     "female" , "58.9 * weight - 23.1",
+"[3-10[", "female" , "20.1 * weight + 507",
+"[10-18[","female", "11.1 * weight + 761",
+"[18-30[","female", "13.1 * weight + 558",
+"[30-60[","female", "9.74 * weight + 694",
+"[60-70[","female", "10.2 * weight +  572",
+">=70"   ,"female", "10.0 * weight + 577")
+  ) %>%
+  theme_zebra() %>%
+  align(align = "left", part = "all" ) %>%
+  hline_top(part = "all", border = fp_border(width = 1.5)) %>%
+  hline_bottom(part = "all", border = fp_border(width = 1.5)) %>%
+  width(width = 3)   %>% 
+  set_caption("Equations for estimating basal metabolic rate") %>%
+  autofit()
+```
+
+If the patient considers their sex as "undefined" or chooses the "prefer not to say" option, then an equation for females is used. If the patient falls into the "intersex" category, then the average of the results for a male and for a female of the considered age is used (WARNING: At the time of writing this guide, there is no scientific data to justify any calculation for intersex people). These equations provide BMR in kcal/day, but the app also silently computes BMR in kcal/min to use it in specific calculations. Then, the following variables are computed for each epoch of the dataset:
+
+* SED, LPA, MPA, VPA categories based on the axis and the cut-points configured by the user;
+* METs, by using the MET equation provided by the user (if the patient considers their sex as "undefined" or chooses the "prefer not to say" option, then equations including sex information, when selected, are used as if the patient were a female; when the "intersex" category is used, an average of the METs related respectively to a male and to a female is used with the equations using sex information; of note, at the time of writing this guide, there is no scientific data to justify any calculation for intersex people);
+* Kilocalories. For non-SED epochs, the computed MET values are multiplied by BMR expressed in kcal/min when using the Santos-Lozano et al. [-@santos-lozanoActigraphGT3XValidation2013] equations since, in that study, METs were multiples of the measured (not standard) resting metabolic rate. When using the  Sasaki et al. [-@sasakiValidationComparisonActiGraph2011] and Freedson et al. [-@freedsonCalibrationComputerScience1998] equations, the computed MET values are multiplied by weight and 1/60 since, in those studies, METs were multiples of standard resting metabolic rate (i.e., 3.5 mLO$_{2}$/min/kg) and a standard MET is approximately equivalent to 1 kcal/kg/h [@butteAssessingPhysicalActivity2012]. For SED epochs, BMR expressed in kcal/min is directly used;
+* MET-hours related to MVPA, by multiplying the computed MET value by the time, only when the MET value is $\geqslant$ 3.
+
+Of note, kilocalories and MET-hours are initially computed on a 1-min basis, and are then adjusted using a correction factor to correspond to the epoch duration chosen to analyse the accelerometer dataset.
+
+Once these new variables added to the initial dataset, the app summarizes the results by day using valid wear time only and corresponding to the period of the day considered by the user for analysis, this for the following metrics: 
+
+* `wear_time`: total wear time.
+* `total_counts_axis1`: total counts for the vertical axis.
+* `total_counts_vm`: total counts for the vector magnitude.
+* `axis1_per_min`: mean of the counts per minute for the vertical axis.
+* `vm_per_min`: mean of the counts per minute for the vector magnitude.
+* `minutes_SED`: total minutes spent in SED behavior.
+* `minutes_LPA`: total minutes spent in LPA behavior.
+* `minutes_MPA`: total minutes spent in MPA behavior.
+* `minutes_VPA`: total minutes spent in VPA behavior.
+* `minutes_MVPA`: total minutes spent in MVPA behavior.
+* `percent_SED`: proportion of wear time spent in SED behavior.
+* `percent_LPA`: proportion of wear time spent in LPA behavior. 
+* `percent_MPA`: proportion of wear time spent in MPA behavior.
+* `percent_VPA`: proportion of wear time spent in VPA behavior. 
+* `percent_MVPA`: proportion of wear time spent in MVPA behavior.
+* `ratio_mvpa_sed`: ratio between MVPA and SED times (`minutes_MVPA` / `minutes_SED`).
+* `mets_hours_mvpa`: total MET-hours spent during MVPA behavior.
+* `total_kcal`: total kilocalories.
+* `PAL`: physical activity level.
+* `total_steps`: total step count.
+* `max_steps_60min`: best step accumulation per minute averaged over a window of 60 continuous minutes.
+* `max_steps_30min`: best step accumulation per minute averaged over a window of 30 continuous minutes.
+* `max_steps_20min`: best step accumulation per minute averaged over a window of 20 continuous minutes.
+* `max_steps_5min`: best step accumulation per minute averaged over a window of 5 continuous minutes.
+* `max_steps_1min`: best step accumulation per minute over a window of 1 minute.
+* `peak_steps_60min`: step accumulation per minute averaged over the best 60 continuous or discontinuous minutes.
+* `peak_steps_30min`: step accumulation per minute averaged over the best 30 continuous or discontinuous minutes.
+* `peak_steps_20min`: step accumulation per minute averaged over the best 20 continuous or discontinuous minutes.
+* `peak_steps_5min`: step accumulation per minute averaged over the best 5 continuous or discontinuous minutes.
+* `peak_steps_1min`: step accumulation per minute over the best minute (same result as for `max_steps_1min`).
+* `ig`: intensity gradient.
+* `M1/3`: the count value (in counts/epoch duration) above which the most active 8h are accumulated over the day
+* `M120`: the count value (in counts/epoch duration) above which the most active 120 minutes are accumulated over the day
+* `M60`: the count value (in counts/epoch duration) above which the most active 60 minutes are accumulated over the day
+* `M30`: the count value (in counts/epoch duration) above which the most active 30 minutes are accumulated over the day
+* `M15`: the count value (in counts/epoch duration) above which the most active 15 minutes are accumulated over the day
+* `M5`: the count value (in counts/epoch duration) above which the most active 5 minutes are accumulated over the day
+
+
+To compute PAL, total energy expenditure (TEE) related to the period of the day the user wanted to analyse is divided by BMR that is computed to also correspond to the period of the day the user wanted to analyse. TEE is obtained by summing the kilocalories measured during wear time epochs and the kilocalories related to BMR expended during nonwear time epochs (it is assumed that the periods where the device was not worn corresponded to sleeping periods, during which energy expenditure is near of BMR), and by multiplying this sum by 10/9 to take into account the thermic effect of food. In principle, PAL should be computed using the whole day, not a given period of the day. Of course, such calculations may conduct to underestimate TEE and PAL if the device was removed during prolonged periods of physical activity, unless the user manually adds physical activity information into the dedicated boxes of the app as explained above. Moreover, even if the device was correctly worn, the estimate of PAL is very approximate since both BMR and kilocalories are estimated using methods that may not be accurate at the individual level.
+
+To determine the intensity gradient, the app computes the number of minutes accumulated in the bins of intensity that have been previously defined by the user (cf. explanations provided above). Then, a linear model is computed to describe the relation between the natural logarithm of the minutes accumulated in the bins, and the natural logarithm of the middle values of the correponding bins. The intensity gradient is the coefficient of the slope of this model [@rowlandsCutPointsAccelerometer2018]. The less negative the intensity gradient, the more the patient tends to spend more time at higher intensity.
+
+Finally, the app computes the daily averages and medians of the computed metrics using the days considered as valid. If the user analysed data using 60-s epochs, then the app will provide the following activity accumulation metrics for sedentary behaviour and physical activity:
+
+* `mean breaks`: mean daily number of transitions from a sedentary bout to a  physical activity bout (or from a physical activity bout to a sedentary bout); this actually corresponds to the mean daily total number of sedentary (or physical activity) bouts detected.
+  
+* `alpha`: provides information on the relative proportion of short and long bouts.  The higher the alpha coefficient, the more the individual tends to accumulate sedentary (or physical activity) time using relatively short bouts. Alpha is computed using all the bouts of the days and periods of the day considered for analysis. Alpha is computed using the following equation provided by Chastin et al. [-@chastinMethodsObjectiveMeasure2010]: $\alpha = 1 + n \left[\sum_{i = 1}^{n}{ln}\frac{x_{i}}{x_{min}}\right]^{-1}$, with ${n}$ the total number of bouts, $x_{i}$ the duration of the bout ${i}$, and $x_{min}$ the shortest recorded bout duration.
+  
+* `median bout duration (MBD)`: refers to the median sedentary (or physical activity) bout duration. MBD is computed using all the bouts of the days and periods of the day considered for analysis.
+  
+* `usual bout duration (UBD)`: refers to the bout duration under/above which 50% of sedentary (or physical activity) time is accumulated. UBD is computed using all the bouts of the day and periods of the day considered for analysis. UBD is determined as described in Belletiere et al. (2021; doi: 10.1123/jmpb.2020-0036) supplementary files. More precisely, UBD is found using non-linear regression with the following model: $y = \frac{t^n}{t^n + UBD^n}$, with ${t}$ the bout duration, ${n}$ a free parameter, and ${y}$ the fraction of total time accumulated in bouts $≤{t}$.
+  
+* `Gini index`: provides information on the equality with which bout durations contribute to total sedentary (or physical activity) time. A value of 1 reveals perfect inequality, and a value of 0 reveals perfect equality. Gini index is computed using all the bouts of the days and periods of the day considered for analysis. Gini index is computed following the procedure described at the following link: https://www.statology.org/gini-coefficient-excel/.
+
+
+# Results and export
+In the app, the results by day and those summarized (means and medians) using valid days are shown in tables. Four different buttons allow the user to generate a report where all the inputs of the app are recorded, as well as the results. Two first buttons allow getting an .html report (long format) in either english or french language, with all results in tables and figures. The two other buttons allow getting a .pdf report (short format) in either english or french language, with similar information to the long version but without the tabular views of the results for each day. In all reports, some comments are provided to help positioning the patient in relation to normative values or guidelines. The user also can click on specific buttons to export to .csv files either the marked dataset, the results by day, the mean results based on valid days, or the median results based on valid days. Finally, a last button allows to lead the user towards panels to fullfill the  *Daily- and Clinical
+visit-PROactive Physical Activity in COPD (D-PPAC and C-PPAC)* questionnaires and to get the corresponding scores, either from the medians of the scores related to the valid days [@gimeno-santosPROactiveInstrumentsMeasure2015] or from the means of the scores related to the valid days  [@garcia-aymerichValidityResponsivenessDaily2021] when using the C-PPAC instrument. The scores can be exported to an .html report and to a .pdf report.
+
+Importantly, the comparison of the daily results with normative values or guidelines should be used with caution. Regarding the total number of steps, the values proposed in the figure were obtained using classical pedometers. Be aware of the fact that if the ActiGraph accelerometer that was used was a GT3X generation device, the final result is likely to be underestimated or overestimated in comparison with classical pedometers if the normal filter or the low frequency extension filter was enabled, respectively, when generating the .agd file with ActiLife® software [@barreiraComparisonOlderAdults2013].
+
+The daily results for MVPA and SED times are shown in relation to a mortality hazard ratio that has been estimated from accelerometer data (ActiGraph 7164, GT1M and GT3X+ models [normal filter], and the Actical) in +40 yr old adults by Ekelund et al. [-@ekelundDoseresponseAssociationsAccelerometry2019]. In a similar manner, the daily MVPA/SED ratio is shown in relation to a mortality hazard ratio that has been estimated from accelerometer data (ActiGraph 7164 model [normal filter]) in 50-79 yr old adults by Chastin et al. [-@chastinStrikingRightBalance2021]. The hazard ratios shown in the figures were obtained as follows: first, the web platform [WebPlotDigitizer](https://automeris.io/WebPlotDigitizer) was used to capture the coordinates of several points that constituted the curves showing the hazard ratios in the original articles. Then, a local polynomial regression fitting procedure was used on the coordinates data in R software. The fitted data were finally used for plotting the figures of the report. Importantly, the positions of the patient's results on the curves of the hazard ratios should not be considered as accurate and definitive evidences of patient's health risk, at least for the two following reasons: (i) these curves were established at the population level and are not likely to integrate the multiplicity of the factors that affect health risk at the individual level; (ii) the shapes of these curves are related to specific devices and choices regarding the cut-points defined for SED and MVPA categories and regarding nonwear/wear time analysis. Thus, if the analysis with the activAnalyzer app was performed using an Actigraph model that was different from those used in the studies cited above, and/or with the Lower Frequency Extension filter enabled during the creation of the .agd files, and/or using choices for analyzing data that were different from those made in the studies cited above (different choices could be more appropriate to describe the physical behavior of a specific patient), then the patient's results may be harder to interpret. Rather than comparing patient'results with specific hazard ratios at a precise time point, these figures could be more appropriately used as a pedagogical tool to show the global non-linear dose-response effect of physical activity and sedentary behaviors on health, and to highlight the evolution of the patient' scores over time. For information, the choices made in the studies by Ekelund et al. [-@ekelundDoseresponseAssociationsAccelerometry2019] and Chastin et al. [-@chastinStrikingRightBalance2021] are shown in Table \@ref(tab:StudiesSettings) below.
+
+```{r StudiesSettings}
+library(flextable)
+library(officer)
+set_flextable_defaults(fonts_ignore = TRUE)
+flextable(
+tribble(
+  ~ Study,               ~"Axis for PA intensity classification",   ~"SED cut-point",     ~"MVPA cut-point",      ~"Nonwear time algorithm",
+"Ekelund et al. (2019)", "Vertical axis",                          "<= 100 counts/min", ">= 1952 counts/min", "Axis: vertical; Frame: 90 min; Allowance frame: 2 min, stream frame: 30 min",           
+"Chastin et al. (2021)", "Vertical axis",                          "< 100 counts/min",   "> 2020 counts/min", "Axis: vertical; Frame: 60 min; Allowance frame: 2 min with counts/min <50",           
+)
+  ) %>%
+  theme_zebra() %>%
+  align(align = "left", part = "all" ) %>%
+  hline_top(part = "all", border = fp_border(width = 1.5)) %>%
+  hline_bottom(part = "all", border = fp_border(width = 1.5)) %>%
+  width(width = 1) %>% 
+  set_caption("Analysis choices made in the Ekelund et al. (2019) and Chastin et al. (2021) studies")
+```
+
+# References

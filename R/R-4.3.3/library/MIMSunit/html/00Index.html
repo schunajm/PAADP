@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head><title>R: Algorithm to Compute Monitor Independent Movement Summary Unit
+(MIMS-Unit)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+<h1> Algorithm to Compute Monitor Independent Movement Summary Unit
+(MIMS-Unit)
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;MIMSunit&rsquo; version 0.11.2</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../NEWS">Package NEWS</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table style="width: 100%;">
+<tr><td style="width: 25%;"><a href="aggregate_for_mims.html">aggregate_for_mims</a></td>
+<td>Aggregate over epoch to get numerically integrated values.</td></tr>
+<tr><td style="width: 25%;"><a href="aggregate_for_orientation.html">aggregate_for_orientation</a></td>
+<td>Aggregate over epoch to get estimated accelerometer orientation.</td></tr>
+<tr><td style="width: 25%;"><a href="bandlimited_interp.html">bandlimited_interp</a></td>
+<td>Apply a bandlimited interpolation filter to the signal to change the sampling rate</td></tr>
+<tr><td style="width: 25%;"><a href="clip_data.html">clip_data</a></td>
+<td>Clip dataframe to the given start and stop time</td></tr>
+<tr><td style="width: 25%;"><a href="compute_orientation.html">compute_orientation</a></td>
+<td>Estimate the accelerometer orientation</td></tr>
+<tr><td style="width: 25%;"><a href="conceptual_diagram_data.html">conceptual_diagram_data</a></td>
+<td>The input accelerometer data used to generate the conceptual diagram (Figure 1) in the manuscript.</td></tr>
+<tr><td style="width: 25%;"><a href="custom_mims_unit.html">custom_mims_unit</a></td>
+<td>Compute both MIMS-unit and sensor orientations with custom settings</td></tr>
+<tr><td style="width: 25%;"><a href="cut_off_signal.html">cut_off_signal</a></td>
+<td>Cut off input multi-channel signal according to a new dynamic range</td></tr>
+<tr><td style="width: 25%;"><a href="cv_different_algorithms.html">cv_different_algorithms</a></td>
+<td>Coefficient of variation values for different acceleration data summary algorithms</td></tr>
+<tr><td style="width: 25%;"><a href="edge_case.html">edge_case</a></td>
+<td>A short snippet of raw accelerometer signal from a device that has ending data maxed out.</td></tr>
+<tr><td style="width: 25%;"><a href="export_to_actilife.html">export_to_actilife</a></td>
+<td>Export accelerometer data in Actilife RAW CSV format</td></tr>
+<tr><td style="width: 25%;"><a href="extrapolate.html">extrapolate</a></td>
+<td>Extrapolate input multi-channel accelerometer data</td></tr>
+<tr><td style="width: 25%;"><a href="extrapolate_rate.html">extrapolate_rate</a></td>
+<td>Get extrapolation rate.</td></tr>
+<tr><td style="width: 25%;"><a href="extrapolate.html">extrapolate_single_col</a></td>
+<td>Extrapolate input multi-channel accelerometer data</td></tr>
+<tr><td style="width: 25%;"><a href="generate_interactive_plot.html">generate_interactive_plot</a></td>
+<td>Plot MIMS unit values or raw signal using dygraphs interactive plotting library.</td></tr>
+<tr><td style="width: 25%;"><a href="iir.html">iir</a></td>
+<td>Apply IIR filter to the signal</td></tr>
+<tr><td style="width: 25%;"><a href="illustrate_extrapolation.html">illustrate_extrapolation</a></td>
+<td>Plot illustrations about extrapolation in illustration style.</td></tr>
+<tr><td style="width: 25%;"><a href="illustrate_signal.html">illustrate_signal</a></td>
+<td>Plot given raw signal in illustration diagram style.</td></tr>
+<tr><td style="width: 25%;"><a href="import_actigraph_count_csv.html">import_actigraph_count_csv</a></td>
+<td>Import Actigraph count data stored in Actigraph summary csv format</td></tr>
+<tr><td style="width: 25%;"><a href="import_actigraph_csv.html">import_actigraph_csv</a></td>
+<td>Import raw multi-channel accelerometer data stored in Actigraph raw csv format</td></tr>
+<tr><td style="width: 25%;"><a href="import_actigraph_csv_chunked.html">import_actigraph_csv_chunked</a></td>
+<td>Import large raw multi-channel accelerometer data stored in Actigraph raw csv format in chunks</td></tr>
+<tr><td style="width: 25%;"><a href="import_actigraph_meta.html">import_actigraph_meta</a></td>
+<td>Import The meta information stored in Actigraph RAW or summary csv file.</td></tr>
+<tr><td style="width: 25%;"><a href="import_activpal3_csv.html">import_activpal3_csv</a></td>
+<td>Import raw multi-channel accelerometer data stored in ActivPal3 csv format</td></tr>
+<tr><td style="width: 25%;"><a href="import_enmo_csv.html">import_enmo_csv</a></td>
+<td>Import ENMO data stored in csv csv</td></tr>
+<tr><td style="width: 25%;"><a href="import_mhealth_csv.html">import_mhealth_csv</a></td>
+<td>Import raw multi-channel accelerometer data stored in mHealth Specification</td></tr>
+<tr><td style="width: 25%;"><a href="import_mhealth_csv_chunked.html">import_mhealth_csv_chunked</a></td>
+<td>Import large raw multi-channel accelerometer data stored in mHealth Specification in chunks.</td></tr>
+<tr><td style="width: 25%;"><a href="interpolate_signal.html">interpolate_signal</a></td>
+<td>Interpolate missing points and unify sampling rate for multi-channel signal</td></tr>
+<tr><td style="width: 25%;"><a href="measurements_different_devices.html">measurements_different_devices</a></td>
+<td>The mean and standard deviation of accelerometer summary measure for different acceleration data summary algorithms and for different devices.</td></tr>
+<tr><td style="width: 25%;"><a href="mims_unit.html">mims_unit</a></td>
+<td>Compute Monitor Independent Motion Summary unit (MIMS-unit)</td></tr>
+<tr><td style="width: 25%;"><a href="mims_unit.html">mims_unit_from_files</a></td>
+<td>Compute Monitor Independent Motion Summary unit (MIMS-unit)</td></tr>
+<tr><td style="width: 25%;"><a href="parse_epoch_string.html">parse_epoch_string</a></td>
+<td>Parse epoch string to the corresponding number of samples it represents.</td></tr>
+<tr><td style="width: 25%;"><a href="rest_on_table.html">rest_on_table</a></td>
+<td>A short snippet of raw accelerometer signal from a device resting on a table.</td></tr>
+<tr><td style="width: 25%;"><a href="sample_raw_accel_data.html">sample_raw_accel_data</a></td>
+<td>Sample raw accelerometer data</td></tr>
+<tr><td style="width: 25%;"><a href="sampling_rate.html">sampling_rate</a></td>
+<td>Estimate sampling rate for multi-channel signal</td></tr>
+<tr><td style="width: 25%;"><a href="segment_data.html">segment_data</a></td>
+<td>Segment input dataframe into windows as specified by breaks. 'segment_data' segments the input sensor dataframe into epoch windows with length specified in breaks.</td></tr>
+<tr><td style="width: 25%;"><a href="sensor_orientations.html">sensor_orientations</a></td>
+<td>Estimates sensor orientation</td></tr>
+<tr><td style="width: 25%;"><a href="shiny_app.html">shiny_app</a></td>
+<td>Run shiny app to compute MIMSunit values from files</td></tr>
+<tr><td style="width: 25%;"><a href="simulate_new_data.html">simulate_new_data</a></td>
+<td>Simulate new data based on the given multi-channel accelerometer data</td></tr>
+<tr><td style="width: 25%;"><a href="sum_up.html">sum_up</a></td>
+<td>Sum of multi-channel signal.</td></tr>
+<tr><td style="width: 25%;"><a href="vector_magnitude.html">vector_magnitude</a></td>
+<td>Vector magnitude of multi-channel signal.</td></tr>
+</table>
+</div></body></html>
