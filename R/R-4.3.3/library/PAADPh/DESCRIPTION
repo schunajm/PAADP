@@ -14,5 +14,5 @@ Imports: data.table, Rcpp (>= 0.12.10), foreach, doParallel, signal,
         read.gt3x, R.utils, GGIR
 Depends: stats, utils, R (>= 3.5.0)
 LinkingTo: Rcpp
-Built: R 4.3.3; x86_64-w64-mingw32; 2024-03-15 06:47:45 UTC; windows
+Built: R 4.3.3; x86_64-w64-mingw32; 2024-03-18 18:08:58 UTC; windows
 Archs: x64

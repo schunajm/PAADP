@@ -146,7 +146,7 @@ Copyright (C) 2024</property>
   <object class="GtkAdjustment" id="adjustment22">
     <property name="lower">1</property>
     <property name="upper">10000000000</property>
-    <property name="value">4</property>
+    <property name="value">1</property>
     <property name="step-increment">1</property>
     <property name="page-increment">10</property>
   </object>
@@ -181,6 +181,7 @@ Copyright (C) 2024</property>
   <object class="GtkAdjustment" id="adjustment27">
     <property name="lower">-1</property>
     <property name="upper">1440</property>
+    <property name="value">1440</property>
     <property name="step-increment">1</property>
     <property name="page-increment">10</property>
   </object>
@@ -5686,7 +5687,7 @@ Row</property>
                                                         <property name="text" translatable="yes">4</property>
                                                         <property name="adjustment">adjustment22</property>
                                                         <property name="climb-rate">1</property>
-                                                        <property name="value">4</property>
+                                                        <property name="value">1</property>
                                                       </object>
                                                       <packing>
                                                         <property name="left-attach">1</property>
@@ -6322,7 +6323,6 @@ Row</property>
                                                 </child>
                                                 <child>
                                                   <object class="GtkComboBoxText" id="edcombo8">
-                                                    <property name="visible">True</property>
                                                     <property name="sensitive">False</property>
                                                     <property name="can-focus">False</property>
                                                     <property name="valign">center</property>
@@ -7020,6 +7020,7 @@ Epoch (sec)</property>
                                                         <property name="receives-default">False</property>
                                                         <property name="tooltip-text" translatable="yes">Summarize estimates for each day of collected data?</property>
                                                         <property name="hexpand">True</property>
+                                                        <property name="active">True</property>
                                                         <property name="draw-indicator">True</property>
                                                         <signal name="toggled" handler="on_edcheck3_toggled" swapped="no"/>
                                                       </object>
@@ -7080,6 +7081,7 @@ Minutes / Day</property>
                                                         <property name="text" translatable="yes">0</property>
                                                         <property name="adjustment">adjustment27</property>
                                                         <property name="climb-rate">1</property>
+                                                        <property name="value">1440</property>
                                                       </object>
                                                       <packing>
                                                         <property name="left-attach">2</property>
@@ -7362,6 +7364,7 @@ Valid Days</property>
                                         <property name="margin-end">5</property>
                                         <property name="margin-bottom">2</property>
                                         <property name="hexpand">True</property>
+                                        <property name="action">select-folder</property>
                                         <property name="title" translatable="yes"/>
                                         <signal name="file-set" handler="on_edfilechooserbutton_file_set" swapped="no"/>
                                       </object>

@@ -1,4 +1,0 @@
-Starting Row: 1
-Ending Row: 15
-File Chooser Path: H:\Test_Data\A00-04-4522 waistRAW_short1.csv
-------------------------

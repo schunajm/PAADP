@@ -1,4 +1,4 @@
-9aec8a3e6561f8701a25fd0415b2e7fd *DESCRIPTION
+b9c255e4d12379e401ae75759d33221d *DESCRIPTION
 e6a600fd5e1d9cbde2d983680233ad02 *LICENSE
 d67d59ef07dded383a1bd572b3db8396 *Meta/Rd.rds
 7a21ad154afded7cd0ca42b912826544 *Meta/data.rds
@@ -6,11 +6,11 @@ f4c021eb699b03d5c65ae4ebc6fa3c2d *Meta/features.rds
 d2272af88e5a7db87908d575a9ca4c55 *Meta/hsearch.rds
 488199aa16ed310b45d987b883fb7352 *Meta/links.rds
 ad1d9f0350fe5f62bb98d4d9c2a4943b *Meta/nsInfo.rds
-676bb848a4c3f21572d62cdb5a978130 *Meta/package.rds
+d08f34aeb38b556f2e5bd786e43aca51 *Meta/package.rds
 78ede25a259cdec2ed19e6091e781408 *NAMESPACE
 d6c68f1fe41ced6e98a766a3757313da *R/PAADPh
-56a7196c55a8deab12f5cdc58aa4b1fb *R/PAADPh.rdb
-18f99eede2b99f87d2ea613f8fadda21 *R/PAADPh.rdx
+12d68b58595a0491bcab66e85c1d1bd2 *R/PAADPh.rdb
+1954e86b4cfa89b38068addc93187c95 *R/PAADPh.rdx
 7c48d4e25ddb1ecfaba7cbde84ef9d74 *data/Rdata.rdb
 22c6ad25092217bd9decc78ab9adf03b *data/Rdata.rds
 6ecd7259d1005b2c02c8ff6201f2b90f *data/Rdata.rdx
@@ -21,4 +21,4 @@ a3f36e0279daafa2c80afe789232d1dc *help/PAADPh.rdx
 2bb8f36dffaeed63798c3ff2c12d2e4a *help/paths.rds
 e9208f057e623ccb228f802c5bdc643b *html/00Index.html
 8b9362669af13540a86a3ac6cf22f99d *html/R.css
-17ccec1f39661dea6f9df94190baa74d *libs/x64/PAADPh.dll
+7f2e165852a80c29e2577615ea9ac225 *libs/x64/PAADPh.dll

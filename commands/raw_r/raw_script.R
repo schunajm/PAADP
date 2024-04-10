@@ -139,7 +139,8 @@ procrawdata <- function(){
       effilelen <- trunc(filelen/(vlist$samprate))*(vlist$samprate);
 
       ###Create Chunk Indices###
-      chnksval <- 10000000; chnksize <- trunc(chnksval/(vlist$samprate))*(vlist$samprate)
+      chnksval <- trunc(10000000/(vlist$samprate*vlist$epoch))*(vlist$samprate*vlist$epoch)
+      chnksize <- trunc(chnksval/(vlist$samprate))*(vlist$samprate)
       bchnks <- trunc(effilelen/chnksize)-1; chnkseq <- 1:bchnks;
       chnkint <- chnkseq*chnksize; chnkfull <- c(0, chnkint, effilelen)
       chnkfullsec <- c(0, chnkint/vlist$samprate, effilelen/vlist$samprate)
@@ -159,6 +160,7 @@ procrawdata <- function(){
       ###Create Loop For Processing to the Second Level###
       res1 = list()
       res2 = list()
+      gtstimekey = list()
       nchunks <- 1:length(chnkbot)
 
       mprocfunc <- function(nchunks){
@@ -227,9 +229,9 @@ procrawdata <- function(){
         }
 
         ####Resample for Counts#####
-        dat3 <- if((finsamprate != 30 | finsamprate != 40 | finsamprate != 50 |
-                    finsamprate != 60 | finsamprate != 70 | finsamprate != 80 |
-                    finsamprate != 90 | finsamprate != 100) &
+        dat3 <- if((finsamprate != 30 & finsamprate != 40 & finsamprate != 50 &
+                    finsamprate != 60 & finsamprate != 70 & finsamprate != 80 &
+                    finsamprate != 90 & finsamprate != 100) &
                    (sum(vlist$vars=="Counts")==1 | sum(vlist$vars=="Counts LFE")==1)==T){
           rsampdat3 <- function(x){
             gsignal::resample(x, 30, vlist$samprate)
@@ -258,9 +260,9 @@ procrawdata <- function(){
           dat1 <- if(gtfz == vlist$resampfz | vlist$resamp == "False"){
             gtdat
           } else{
-            X <- round2(gsignal::resample(gtdat$X, gtfz, vlist$resampfz), 3); gc()
-            Y <- round2(gsignal::resample(gtdat$Y, gtfz, vlist$resampfz), 3); gc()
-            Z <- round2(gsignal::resample(gtdat$Z, gtfz, vlist$resampfz), 3); gc()
+            X <- PAADPh::round2(gsignal::resample(gtdat$X, gtfz, vlist$resampfz), 3); gc()
+            Y <- PAADPh::round2(gsignal::resample(gtdat$Y, gtfz, vlist$resampfz), 3); gc()
+            Z <- PAADPh::round2(gsignal::resample(gtdat$Z, gtfz, vlist$resampfz), 3); gc()
             dat <- data.frame(X = X, Y = Y, Z = Z)
             rm(X,Y,Z); gc()
             dat
@@ -281,9 +283,9 @@ procrawdata <- function(){
           }
 
           ####Resample for Counts#####
-          dat3 <- if((finsamprate != 30 | finsamprate != 40 | finsamprate != 50 |
-                      finsamprate != 60 | finsamprate != 70 | finsamprate != 80 |
-                      finsamprate != 90 | finsamprate != 100) &
+          dat3 <- if((finsamprate != 30 & finsamprate != 40 & finsamprate != 50 &
+                      finsamprate != 60 & finsamprate != 70 & finsamprate != 80 &
+                      finsamprate != 90 & finsamprate != 100) &
                      (sum(vlist$vars=="COUNTS")==1 | sum(vlist$vars=="COUNTS_LF")==1)==T){
             rsampdat3 <- function(x){
               gsignal::resample(x, 30, gtfz)
@@ -313,12 +315,12 @@ procrawdata <- function(){
             names(dat) <- c("X","Y","Z")
             dat
           } else{
-            X <- round2(gsignal::resample(gtdat1$data$x, vlist$resampfz, gtfz), 3); gc()
-            Y <- round2(gsignal::resample(gtdat1$data$y, vlist$resampfz, gtfz), 3); gc()
-            Z <- round2(gsignal::resample(gtdat1$data$z, vlist$resampfz, gtfz), 3); gc()
-            #light <- round2(gsignal::resample(gtdat1$data$light, vlist$resampfz, gtfz), 0); gc()
-            #battery <- round2(gsignal::resample(gtdat1$data$battery, vlist$resampfz, gtfz), 2); gc()
-            #temp <- round2(gsignal::resample(gtdat1$data$temp, vlist$resampfz, gtfz), 1); gc()
+            X <- PAADPh::round2(gsignal::resample(gtdat1$data$x, vlist$resampfz, gtfz), 3); gc()
+            Y <- PAADPh::round2(gsignal::resample(gtdat1$data$y, vlist$resampfz, gtfz), 3); gc()
+            Z <- PAADPh::round2(gsignal::resample(gtdat1$data$z, vlist$resampfz, gtfz), 3); gc()
+            #light <- PAADPh::round2(gsignal::resample(gtdat1$data$light, vlist$resampfz, gtfz), 0); gc()
+            #battery <- PAADPh::round2(gsignal::resample(gtdat1$data$battery, vlist$resampfz, gtfz), 2); gc()
+            #temp <- PAADPh::round2(gsignal::resample(gtdat1$data$temp, vlist$resampfz, gtfz), 1); gc()
             #time <- seq(gtdat1$data$time[1], gtdat1$data$time[gtlength] + 100, 1/vlist$resampfz); gc()
             #time <- head(time, length(x)); gc()
             dat <- data.frame(X = X, Y = Y, Z = Z)
@@ -341,9 +343,9 @@ procrawdata <- function(){
           }
 
           ####Resample for Counts#####
-          dat3 <- if((finsamprate != 30 | finsamprate != 40 | finsamprate != 50 |
-                      finsamprate != 60 | finsamprate != 70 | finsamprate != 80 |
-                      finsamprate != 90 | finsamprate != 100) &
+          dat3 <- if((finsamprate != 30 & finsamprate != 40 & finsamprate != 50 &
+                      finsamprate != 60 & finsamprate != 70 & finsamprate != 80 &
+                      finsamprate != 90 & finsamprate != 100) &
                      (sum(vlist$vars=="COUNTS")==1 | sum(vlist$vars=="COUNTS_LF")==1)==T){
             rsampdat3 <- function(x){
               gsignal::resample(x, 30, gtfz)
@@ -372,12 +374,12 @@ procrawdata <- function(){
             names(dat) <- c("X","Y","Z")
             dat
           } else{
-            X <- round2(gsignal::resample(gtdat1$data.out[1:gtlength,2], vlist$resampfz, gtfz), 3); gc()
-            Y <- round2(gsignal::resample(gtdat1$data.out[1:gtlength,3], vlist$resampfz, gtfz), 3); gc()
-            Z <- round2(gsignal::resample(gtdat1$data.out[1:gtlength,4], vlist$resampfz, gtfz), 3); gc()
-            #light <- round2(gsignal::resample(gtdat1$data.out[1:gtlength,5], vlist$resampfz, gtfz)/5, 0)*5; gc()
-            #button <- round2(gsignal::resample(gtdat1$data.out[1:gtlength,6], vlist$resampfz, gtfz), 0); gc()
-            #temperature <- round2(gsignal::resample(gtdat1$data.out[1:gtlength,7], vlist$resampfz, gtfz), 1); gc()
+            X <- PAADPh::round2(gsignal::resample(gtdat1$data.out[1:gtlength,2], vlist$resampfz, gtfz), 3); gc()
+            Y <- PAADPh::round2(gsignal::resample(gtdat1$data.out[1:gtlength,3], vlist$resampfz, gtfz), 3); gc()
+            Z <- PAADPh::round2(gsignal::resample(gtdat1$data.out[1:gtlength,4], vlist$resampfz, gtfz), 3); gc()
+            #light <- PAADPh::round2(gsignal::resample(gtdat1$data.out[1:gtlength,5], vlist$resampfz, gtfz)/5, 0)*5; gc()
+            #button <- PAADPh::round2(gsignal::resample(gtdat1$data.out[1:gtlength,6], vlist$resampfz, gtfz), 0); gc()
+            #temperature <- PAADPh::round2(gsignal::resample(gtdat1$data.out[1:gtlength,7], vlist$resampfz, gtfz), 1); gc()
             #timestamp <- seq(gtdat1$page.timestamps[1], (gtdat1$page.timestamps[1] + length(x)/vlist$resampfz) + 1, 1/vlist$resampfz); gc()
             #timestamp <- head(timestamp,length(x)); gc()
             #timestamp <- as.character(timestamp); gc()
@@ -401,9 +403,9 @@ procrawdata <- function(){
           }
 
           ####Resample for Counts#####
-          dat3 <- if((finsamprate != 30 | finsamprate != 40 | finsamprate != 50 |
-                      finsamprate != 60 | finsamprate != 70 | finsamprate != 80 |
-                      finsamprate != 90 | finsamprate != 100) &
+          dat3 <- if((finsamprate != 30 & finsamprate != 40 & finsamprate != 50 &
+                      finsamprate != 60 & finsamprate != 70 & finsamprate != 80 &
+                      finsamprate != 90 & finsamprate != 100) &
                      (sum(vlist$vars=="COUNTS")==1 | sum(vlist$vars=="COUNTS_LF")==1)==T){
             rsampdat3 <- function(x){
               gsignal::resample(x, 30, gtfz)
@@ -419,6 +421,9 @@ procrawdata <- function(){
           ####Restrict Resampled Data to Complete Data for the Epoch Specified#####
           dat1 <- head(dat1, trunc(nrow(dat1)/(finsamprate*vlist$epoch))*(finsamprate*vlist$epoch))
           dat3 <- head(dat3, trunc(nrow(dat3)/(dat3fz*vlist$epoch))*(dat3fz*vlist$epoch))
+          
+          ####Spoof the GTStime####
+          gtstime <- data.frame()
 
         } else {
           #####Nothing - Not a Recognized File Extension######
@@ -592,8 +597,11 @@ procrawdata <- function(){
         } else {
           NULL
         }
+
         ###Identify What is Going on Here####
         ###Get the Appropriate Sequence Number####
+        if(vlist$extenin == "csv" | vlist$extenin == "tab" |
+           vlist$extenin == "dat" | vlist$extenin == "txt"){
         SEQN <- ((chnkfull[1+1])-(chnkfull[1]))/(finsamprate*vlist$epoch)
 
         ###Combine Data####
@@ -630,11 +638,33 @@ procrawdata <- function(){
 
         ####Combine the Lists####
         return(list(res1=res1, res2=res2))
+        } else {
+          ###Combine Data####
+          fdat1 <- list(MAD = MAD, SVM = SVM, SVMgs = SVMgs, ENMO = ENMO, LFENMO = LFENMO,
+                        BFEN = BFEN, HFEN = HFEN, HFENplus = HFENplus, MIMS = MIMS,
+                        CTSXNF = CTSXNF, CTSYNF = CTSYNF, CTSZNF = CTSZNF, CTSVMNF = CTSVMNF,
+                        CTSXLFE = CTSXLFE, CTSYLFE = CTSYLFE, CTSZLFE = CTSZLFE, CTSVMLFE = CTSVMLFE,
+                        STEPS_WAIST_EXP = STEPS_WAIST_EXP,
+                        STEPWAIST = STEPWAIST, STEPWRIST = STEPWRIST)
+          try(fdat1[sapply(fdat1, is.null)] <- NULL, silent=T)
+          try(fdat1 <- do.call(cbind.data.frame, fdat1), silent=T)
+          res1[[length(res1)+1]] =  fdat1
+
+          fdat2 <- list(SSPHERE = SSPHERE)
+          try(fdat2[sapply(fdat2, is.null)] <- NULL, silent=T)
+          try(fdat2 <- do.call(cbind.data.frame, fdat2), silent=T)
+          res2[[length(res2)+1]] =  fdat2
+
+          gtstimekey[[length(gtstimekey)+1]] = gtstime
+
+          ####Combine the Lists####
+          return(list(res1=res1, res2=res2, gtstimekey=gtstimekey))
+        }
       }
 
       #####Lapply Varations for Single/Multi-Threading & Various Platforms#####
       #####Linux and MacOS should be faster via mclapply (not possible on windows)####
-      if(ses=="Windows" & vlist$multithread=="Yes"){
+      if(ses=="Windows" & vlist$multithread=="True"){
         cl <- parallel::makePSOCKcluster(trunc(0.66*cores))
         parallel::clusterExport(cl, c('mprocfunc','nchunks','vlist','cols','res1','res2','cols2',
                                       'chnksize','chnkfull','chnkfullsec','chnkbot','chnktop','files'),
@@ -647,10 +677,20 @@ procrawdata <- function(){
         resfull <- parallel::mclapply(nchunks, mprocfunc, mc.cores=trunc(cores/2))
       }
 
+      #####Clean-Up the Merged Data with Output Timestamp######
+      if(!is.na(names(resfull[[1]][3])) & names(resfull[[1]][3]) == "gtstimekey"){
+        gtstime <- as.POSIXct(unlist(resfull[[1]][3][[1]]), tz="UTC")
+        resfull[[1]][3] <- NULL
+      } else if(is.na(names(resfull[[1]][3]))){
+        resfull
+      } else{
+        resfull
+      }
+
       ###Collapse the Different Data Streams####
       ###Remove Null Variables####
       resint1 <- unlist(resfull, recursive=F)
-      res1seq <- seq(1, length(resint1), 3); res2seq <- seq(2, length(resint1), 3)
+      res1seq <- seq(1, length(resint1), 2); res2seq <- seq(2, length(resint1), 2)
 
       resint2 <- list(do.call("rbind", (do.call("rbind", resint1[res1seq]))),
                       do.call("rbind", (do.call("rbind", resint1[res2seq])))); gc()
@@ -809,10 +849,10 @@ procrawdata <- function(){
       } else {
         NULL
       }
-     pctg <- paste(round(i/n_iter *100, 0), "% completed")
-     setWinProgressBar(pb, i, label = pctg) # The label will override the label set on the
+     #pctg <- paste(round(i/n_iter *100, 0), "% completed")
+     #setWinProgressBar(pb, i, label = pctg) # The label will override the label set on the
     }
-    close(pb) # Close the connection
+    #close(pb) # Close the connection
 },
   error = function(err.msg){
     write(toString(err.msg), errpath, append=TRUE)

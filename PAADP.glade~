@@ -15,7 +15,7 @@
     <property name="program-name">Physical Activity Accelerometer Data Processor (PAADP)</property>
     <property name="version">version 1.0</property>
     <property name="copyright" translatable="yes">John M. Schuna Jr., PhD
-Copyright (C) 2023</property>
+Copyright (C) 2024</property>
     <property name="logo">custom_icons\Acc_icon2.png</property>
     <property name="license-type">gpl-3-0</property>
     <child internal-child="vbox">
@@ -181,6 +181,7 @@ Copyright (C) 2023</property>
   <object class="GtkAdjustment" id="adjustment27">
     <property name="lower">-1</property>
     <property name="upper">1440</property>
+    <property name="value">1440</property>
     <property name="step-increment">1</property>
     <property name="page-increment">10</property>
   </object>
@@ -7020,6 +7021,7 @@ Epoch (sec)</property>
                                                         <property name="receives-default">False</property>
                                                         <property name="tooltip-text" translatable="yes">Summarize estimates for each day of collected data?</property>
                                                         <property name="hexpand">True</property>
+                                                        <property name="active">True</property>
                                                         <property name="draw-indicator">True</property>
                                                         <signal name="toggled" handler="on_edcheck3_toggled" swapped="no"/>
                                                       </object>
@@ -7080,6 +7082,7 @@ Minutes / Day</property>
                                                         <property name="text" translatable="yes">0</property>
                                                         <property name="adjustment">adjustment27</property>
                                                         <property name="climb-rate">1</property>
+                                                        <property name="value">1440</property>
                                                       </object>
                                                       <packing>
                                                         <property name="left-attach">2</property>
@@ -7362,6 +7365,7 @@ Valid Days</property>
                                         <property name="margin-end">5</property>
                                         <property name="margin-bottom">2</property>
                                         <property name="hexpand">True</property>
+                                        <property name="action">select-folder</property>
                                         <property name="title" translatable="yes"/>
                                         <signal name="file-set" handler="on_edfilechooserbutton_file_set" swapped="no"/>
                                       </object>

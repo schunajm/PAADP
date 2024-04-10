@@ -1979,7 +1979,7 @@ void	on_edcombo10_changed(GtkComboBoxText* b) {
 		}
 		else if (g_strcmp0(selected_text, "Freedson (1998) - 60s") == 0) {
 			gtk_text_buffer_set_text(buffer4, "SED, LPA, MPA, VPA, MVPA", -1);
-			gtk_text_buffer_set_text(buffer6, "0-99, 100-1951, 1952-5724, 5725+, 1925+", -1);
+			gtk_text_buffer_set_text(buffer6, "0-99, 100-1951, 1952-5724, 5725+, 1952+", -1);
 		}
 		else if (g_strcmp0(selected_text, "Troiano (2008) - 60s") == 0) {
 			gtk_text_buffer_set_text(buffer4, "SED, LPA, MPA, VPA, MVPA", -1);
@@ -2058,7 +2058,7 @@ void	on_edcombo11_changed(GtkComboBoxText* b) {
 		}
 		else if (g_strcmp0(selected_text, "Freedson (1998) - 60s") == 0) {
 			gtk_text_buffer_set_text(buffer5, "SED, LPA, MPA, VPA, MVPA", -1);
-			gtk_text_buffer_set_text(buffer7, "0-99, 100-1951, 1952-5724, 5725+, 1925+", -1);
+			gtk_text_buffer_set_text(buffer7, "0-99, 100-1951, 1952-5724, 5725+, 1952+", -1);
 		}
 		else if (g_strcmp0(selected_text, "Troiano (2008) - 60s") == 0) {
 			gtk_text_buffer_set_text(buffer5, "SED, LPA, MPA, VPA, MVPA", -1);
